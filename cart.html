@@ -9,7 +9,6 @@
       integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
       crossorigin="anonymous"
     />
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
@@ -17,7 +16,7 @@
     ></script>
 
     <link rel="stylesheet" href="css/style.css" />
-    <link rel="shortcut icon" href="img/image.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon" />
     <title>Ecommerce</title>
   </head>
   <body>
@@ -52,7 +51,9 @@
               <a href="index.html" class="nav-link text-white">Inicio</a>
             </li>
             <li class="">
-              <a href="index.html#about" class="nav-link text-white">Sobre nosotros</a>
+              <a href="index.html#about" class="nav-link text-white"
+                >Sobre nosotros</a
+              >
             </li>
             <li class="">
               <a href="index.html#products" class="nav-link text-white">Productos</a>
@@ -61,7 +62,7 @@
               <a href="index.html#about" class="nav-link text-white">Contacto</a>
             </li>
             <li class="">
-              <a href="cart.html" class="nav-link text-white"
+              <a href="" class="nav-link text-white"
                 ><svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="16"
@@ -69,122 +70,40 @@
                   fill="currentColor"
                   class="bi bi-cart2"
                   viewBox="0 0 16 16"
-                ><path
+                >
+                  <path
                     d="M0 2.5A.5.5 0 0 1 .5 2H2a.5.5 0 0 1 .485.379L2.89 4H14.5a.5.5 0 0 1 .485.621l-1.5 6A.5.5 0 0 1 13 11H4a.5.5 0 0 1-.485-.379L1.61 3H.5a.5.5 0 0 1-.5-.5M3.14 5l1.25 5h8.22l1.25-5zM5 13a1 1 0 1 0 0 2 1 1 0 0 0 0-2m-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0m9-1a1 1 0 1 0 0 2 1 1 0 0 0 0-2m-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0"
-                  /></svg></a>
+                  /></svg>
+                  <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger" id="count-cart">0</span>
+                </a>
             </li>
           </ul>
         </div>
       </div>
     </nav>
 
-    <!-- Información Principal -->
+    <!-- Contenido Principal -->
     <main>
-      <section id="inicio" class="container-fluid">
-        <div class="pb-5 d-flex flex-column justify-content-center align-items-center">
-          <h1 class=""><strong>School Study Shop</strong></h1>
-          <p class="lead">El material que necesitas para el camino al conocimiento a un solo click.</p>
-              <img src="img/banner.jpg"
-              alt="Imagen principal de productos"
-              class="img-fluid img-thumbnail mb-3"
-              style="width: 500px"/>
-        </div>
+      <section class="container-fluid">
+        <h2 class="mt-5">Carrito de Compras</h2>
+        <div id="productos-carrito" class="cart-items">
+            <p>Aún no has agregado productos al carrito.</p>
+        </div>  
       </section>
     </main>
 
-
-    <!-- Productos -->
-
-    <p class="d-inline-flex gap-1" id="products">
-      <a class="btn btn-primary" data-bs-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
-        Ver productos
-      </a>
-     
-    </p>
-    <div class="collapse" id="collapseExample">
-      <div class="card card-body">
-        
-        <main>
-          <h1 class="text-center">Productos</h1>
-      </main>
-
-      <div class="row row-cols-1 row-cols-md-2 g-4">
-        <div class="col">
-          <div class="card">
-            <img src="img/cuaderno_arg_1.jpg" class="card-img-top img-fluid" alt="...">
-            <div class="card-body">
-              <h5 class="card-title">Cuaderno argollado Kiut</h5>
-              <p class="card-text">Cuarderno argollado de 100 hojas, pasta dura, cuadriculado, marca Kiut.</p>
-              <p class="card-text "><small class="text-body-secondary">$12.000</small></p>
-              <button class="btn btn-primary" onclick="agregarAlCarrito('Cuaderno argollado Kiut', 12000)">Agregar al Carrito</button>
-            </div>
-          </div>
-        </div>
-        <div class="col">
-          <div class="card">
-            <img src="img/cuaderno_arg_2.jpg" class="card-img-top img-fluid" alt="...">
-            <div class="card-body">
-              <h5 class="card-title">Cuaderno argollado Norma</h5>
-              <p class="card-text">Cuarderno argollado de 100 hojas, pasta dura, cuadriculado, marca Norma</p>
-              <p class="card-text "><small class="text-body-secondary">$15.000</small></p>
-              <button class="btn btn-primary" onclick="agregarAlCarrito('Cuaderno argollado Norma', 15000)">Agregar al Carrito</button>
-            </div>
-          </div>
-        </div>
-        <div class="col">
-          <div class="card">
-            <img src="img/cartuchera_negra.jpg" class="card-img-top img-fluid" alt="...">
-            <div class="card-body">
-              <h5 class="card-title">Cartuchera negra</h5>
-              <p class="card-text">cartuchera escolar negra con cierre de cremallera, bolsillo principal y un bolsillo lateral pequeño</p>
-              <p class="card-text "><small class="text-body-secondary">$38.500</small></p>
-              <button class="btn btn-primary" onclick="agregarAlCarrito('Cartuchera negra', 38500)">Agregar al Carrito</button>
-            </div>
-          </div>
-        </div>
-        <div class="col">
-          <div class="card">
-            <img src="img/cartuchera_rosa.jpg" class="card-img-top img-fluid" alt="...">
-            <div class="card-body">
-              <h5 class="card-title">Cartuchera rosada</h5>
-              <p class="card-text">Cartuchera de color rosa con agaradera, bolsillo principal y un bolsillo secundario mas pequeño</p>
-              <p class="card-text "><small class="text-body-secondary">$40.000</small></p>
-              <button class="btn btn-primary" onclick="agregarAlCarrito('Cartuchera rosada', 40000)">Agregar al Carrito</button>
-            </div>
-          </div>
-        </div>
-        <div class="col">
-          <div class="card">
-            <img src="img/boligrafo_gel_negro.jpg" class="card-img-top img-fluid" alt="...">
-            <div class="card-body">
-              <h5 class="card-title">Bolígrafo negro</h5>
-              <p class="card-text">Bolígrafo retráctil punta fina 0.7 negro en gel</p>
-              <p class="card-text "><small class="text-body-secondary">$7.500</small></p>
-              <button class="btn btn-primary" onclick="agregarAlCarrito('Bolígrafo negro', 7500)">Agregar al Carrito</button>
-            </div>
-          </div>
-        </div>
-        <div class="col">
-          <div class="card">
-            <img src="img/lapiz_faber_6b.jpg" class="card-img-top img-fluid" alt="...">
-            <div class="card-body">
-              <h5 class="card-title">Lápiz de dibujo</h5>
-              <p class="card-text">Lápiz Faber-Castell 6b</p>
-              <p class="card-text "><small class="text-body-secondary">$4.800</small></p>
-              <button class="btn btn-primary" onclick="agregarAlCarrito('Lápiz de dibujo', 4800)">Agregar al Carrito</button>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      </div>
-    </div>
-
-
+    <script>
+      // Llamamos la función para mostrar carrito al cargar la página
+      window.onload = function() {
+        // Siempre usamos el LocalStorage para persistir los datos en este caso de los productos.
+        carrito = JSON.parse(localStorage.getItem('carrito')) || [];
+        actualizarCarrito();
+      };
+  </script>
 
 
     <!-- Footer y Contacto -->
-    <footer class="bg-dark text-white pt-5 pb-4" id="about">
+    <footer class="bg-dark text-white pt-5 pb-4">
       <div class="container">
         <div class="row">
           <!-- Información de la empresa -->
@@ -201,16 +120,15 @@
           <!-- Enlaces rápidos -->
           <div class="col-md-3 mb-4">
             <ul class="list-unstyled">
-              <li><a href="index.html" class="text-white text-decoration-none">Inicio</a></li>
-              <li><a href="index.html#products" class="text-white text-decoration-none">Productos</a></li>
-              <li><a href="index.html#about" class="text-white text-decoration-none">Sobre Nosotros</a></li>
-              <li><a href="cart.html" class="text-white text-decoration-none">Carrito de compras</a></li>
-              <li><a href="index.html#about" class="text-white text-decoration-none">Contacto</a></li>
+              <li><a href="products.html" class="text-white text-decoration-none">Inicio</a></li>
+              <li><a href="products.html" class="text-white text-decoration-none">Productos</a></li>
+              <li><a href="about.html" class="text-white text-decoration-none">Sobre Nosotros</a></li>
+              <li><a href="#contacto" class="text-white text-decoration-none">Carrito de compras</a></li>
+              <li><a href="#contacto" class="text-white text-decoration-none">Contacto</a></li>
             </ul>
           </div>
 
-
-         <!-- Formulario de contacto -->
+           <!-- Formulario de contacto -->
         <div class="accordion accordion-flush" id="accordionFlushExample">
           <div class="accordion-item">
             <h2 class="accordion-header">
@@ -255,6 +173,9 @@
         </div>
       </div>
     </footer>
-    <script src="js/products.js"></script>
+
+  
+
+  <script src="js/products.js"></script>
   </body>
 </html>
