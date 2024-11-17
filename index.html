@@ -52,16 +52,16 @@
               <a href="index.html" class="nav-link text-white">Inicio</a>
             </li>
             <li class="">
-              <a href="about.html" class="nav-link text-white">Sobre nosotros</a>
+              <a href="index.html#about" class="nav-link text-white">Sobre nosotros</a>
             </li>
             <li class="">
-              <a href="products.html" class="nav-link text-white">Productos</a>
+              <a href="index.html#products" class="nav-link text-white">Productos</a>
             </li>
             <li class="">
-              <a href="index.html" class="nav-link text-white">Contacto</a>
+              <a href="index.html#about" class="nav-link text-white">Contacto</a>
             </li>
             <li class="">
-              <a href="cart.html" class="nav-link text-white"
+              <a href="products.html#productos-carrito" class="nav-link text-white"
                 ><svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="16"
@@ -88,13 +88,113 @@
               alt="Imagen principal de productos"
               class="img-fluid img-thumbnail mb-3"
               style="width: 500px"/>
-              <a href="products.html" class="btn btn-primary btn-lg my-auto" role="button">Ver Productos</a>
+              <!-- <a href="products.html" class="btn btn-primary btn-lg my-auto" role="button">Ver Productos</a> -->
         </div>
       </section>
     </main>
 
+
+    <!-- Productos -->
+
+    <p class="d-inline-flex gap-1" id="products">
+      <a class="btn btn-primary" data-bs-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
+        Ver productos
+      </a>
+     
+    </p>
+    <div class="collapse" id="collapseExample">
+      <div class="card card-body">
+        
+        <main>
+          <h1 class="text-center">Productos</h1>
+      </main>
+
+      <div class="row row-cols-1 row-cols-md-2 g-4">
+        <div class="col">
+          <div class="card">
+            <img src="img/cuaderno_arg_1.jpg" class="card-img-top img-fluid" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">Cuaderno argollado Kiut</h5>
+              <p class="card-text">Cuarderno argollado de 100 hojas, pasta dura, cuadriculado, marca Kiut.</p>
+              <p class="card-text "><small class="text-body-secondary">$12.000</small></p>
+              <button class="btn btn-primary" onclick="agregarAlCarrito('Cuaderno argollado Kiut', 12000)">Agregar al Carrito</button>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card">
+            <img src="img/cuaderno_arg_2.jpg" class="card-img-top img-fluid" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">Cuaderno argollado Norma</h5>
+              <p class="card-text">Cuarderno argollado de 100 hojas, pasta dura, cuadriculado, marca Norma</p>
+              <p class="card-text "><small class="text-body-secondary">$15.000</small></p>
+              <button class="btn btn-primary" onclick="agregarAlCarrito('Cuaderno argollado Norma', 15000)">Agregar al Carrito</button>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card">
+            <img src="img/cartuchera_negra.jpg" class="card-img-top img-fluid" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">Cartuchera negra</h5>
+              <p class="card-text">cartuchera escolar negra con cierre de cremallera, bolsillo principal y un bolsillo lateral pequeño</p>
+              <p class="card-text "><small class="text-body-secondary">$38.500</small></p>
+              <button class="btn btn-primary" onclick="agregarAlCarrito('Cartuchera negra', 38500)">Agregar al Carrito</button>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card">
+            <img src="img/cartuchera_rosa.jpg" class="card-img-top img-fluid" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">Cartuchera rosada</h5>
+              <p class="card-text">Cartuchera de color rosa con agaradera, bolsillo principal y un bolsillo secundario mas pequeño</p>
+              <p class="card-text "><small class="text-body-secondary">$40.000</small></p>
+              <button class="btn btn-primary" onclick="agregarAlCarrito('Cartuchera rosada', 40000)">Agregar al Carrito</button>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card">
+            <img src="img/boligrafo_gel_negro.jpg" class="card-img-top img-fluid" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">Bolígrafo negro</h5>
+              <p class="card-text">Bolígrafo retráctil punta fina 0.7 negro en gel</p>
+              <p class="card-text "><small class="text-body-secondary">$7.500</small></p>
+              <button class="btn btn-primary" onclick="agregarAlCarrito('Bolígrafo negro', 7500)">Agregar al Carrito</button>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card">
+            <img src="img/lapiz_faber_6b.jpg" class="card-img-top img-fluid" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">Lápiz de dibujo</h5>
+              <p class="card-text">Lápiz Faber-Castell 6b</p>
+              <p class="card-text "><small class="text-body-secondary">$4.800</small></p>
+              <button class="btn btn-primary" onclick="agregarAlCarrito('Lápiz de dibujo', 4800)">Agregar al Carrito</button>
+            </div>
+          </div>
+        </div>
+      </div>
+  
+      <section class="container-fluid">
+        <h2 class="mt-5" id="producto-carrito">Carrito de Compras</h2>
+        <div id="productos-carrito" class="cart-items">
+            <p>Aún no has agregado productos al carrito.</p>
+        </div>
+        <h3>Total: $<span id="total">0.00</span></h3>
+  
+      </section>
+
+      </div>
+    </div>
+
+
+
+
     <!-- Footer y Contacto -->
-    <footer class="bg-dark text-white pt-5 pb-4">
+    <footer class="bg-dark text-white pt-5 pb-4" id="about">
       <div class="container">
         <div class="row">
           <!-- Información de la empresa -->
@@ -151,5 +251,6 @@
         </div>
       </div>
     </footer>
+    <script src="js/products.js"></script>
   </body>
 </html>
