@@ -19,7 +19,7 @@ Bootstrap: Diseño responsivo y estilización moderna.
 Instalación:
 Clona este repositorio:
 git clone https://github.com/emmaCuero/ecommerce.git
-Abre el archivo index.html en tu navegador favorito.
+Abre el archivo index.html en tu navegador.
 Uso:
 Navega por las categorías y selecciona productos.
 Añade productos al carrito para gestionarlos antes de la compra.
