@@ -24,7 +24,7 @@ function agregarAlCarrito(nombreProducto, precioProducto) {
   actualizarCarrito();
   actualizarContadorCarrito();
 
-  alert(`${nombreProducto} ha sido agregado al carrito`);
+  appendAlert(`¡${nombreProducto} ha sido agregado al carrito!`, 'success');
 }
 
 function actualizarCarrito() {
@@ -40,6 +40,7 @@ function actualizarCarrito() {
 
   // Si el carrito está vacío, mostramos un mensaje
   if (carrito.length === 0) {
+    carritoProductos.className = 'text-center'
     carritoProductos.innerHTML = '<p>Aún no has agregado productos al carrito.</p>';
   } else {
 
@@ -54,16 +55,22 @@ function actualizarCarrito() {
       const carritoProductos = document.createElement('div');
           carritoProductos.className = 'card mb-3';
         carritoProductos.innerHTML = `
-            <div class="cart-item d-flex justify-content-between align-items-center">
-                <span>${producto.nombreProducto}</span>
-                <span>$${producto.precioProducto}</span>
-                <span>
+            <div class="cart-item d-flex justify-content-between        align-items-center p-3">
+              <div class="col-4">
+                <span class="ps-2">${producto.nombreProducto}</span>
+              </div>
+              <div class="col-2 text-center">
+                <span>$${producto.precioProducto.toFixed(2)}</span>
+              </div>
+              <div class="col-3 text-center">
                 <button class="btn btn-secondary btn-sm" onclick="modificarCantidad(${index}, -1)">-</button>
-                ${producto.cantidadProducto}
+                <span class="mx-2">${producto.cantidadProducto}</span>
                 <button class="btn btn-secondary btn-sm" onclick="modificarCantidad(${index}, 1)">+</button>
-                </span>
+              </div>
+              <div class="col-2 text-end">
                 <button class="btn btn-danger btn-sm" onclick="eliminarProducto(${index})">Eliminar</button>
-            </div>
+              </div>
+            </div> 
             `;
             productosEnCarrito.appendChild(carritoProductos);
         });
@@ -73,14 +80,14 @@ function actualizarCarrito() {
       totalElement.className = 'card mt-3';
       totalElement.innerHTML = `
           <div class="card-body">
-              <h4 class="text-end">Total: $${total.toFixed(2)}</h4>
+              <h4 class="text-end">Total: $${Math.round(total)}</h4>
           </div>
       `;
       
       carritoProductos.appendChild(productosEnCarrito);
       carritoProductos.appendChild(totalElement);
     }
-    document.getElementById('total').textContent = total.toFixed(2);
+    document.getElementById('total').textContent = Math.round(total);
 }
 
 // Función para modificar la cantidad de un producto
@@ -115,6 +122,8 @@ function eliminarProducto(index) {
   // Guardar el carrito actualizado
   localStorage.setItem('carrito', JSON.stringify(carrito));
   actualizarCarrito();
+
+  mostrarAlerta(`¡${nombreProducto} ha sido eliminado del carrito!`, 'danger');
 }
 
 // Agregar esta función para actualizar el contador
@@ -124,6 +133,25 @@ function actualizarContadorCarrito() {
   if (contador) {
       contador.textContent = carrito.length;
   }
+}
+
+const appendAlert = (message, type) => {
+  const alertPlaceholder = document.getElementById('liveAlertPlaceholder')
+  const wrapper = document.createElement('div')
+  wrapper.innerHTML = [
+      `<div class="alert alert-${type} alert-dismissible" role="alert">`,
+      `   <div>${message}</div>`,
+      '   <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>',
+      '</div>'
+  ].join('')
+
+  alertPlaceholder.append(wrapper)
+
+  // Eliminar la alerta después de 3 segundos
+  setTimeout(() => {
+      wrapper.firstChild.classList.remove('show')
+      setTimeout(() => wrapper.remove(), 150)
+  }, 3000)
 }
 
 // Llamar a esta función después de cada modificación del carrito
