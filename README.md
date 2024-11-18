@@ -26,6 +26,3 @@ Añade productos al carrito para gestionarlos antes de la compra.
 Contacta a través del formulario para más información.
 Créditos
 Desarrollado por Emma Cuero y ...
-
-Licencia
-Este proyecto está disponible bajo la Licencia MIT.
